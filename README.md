@@ -23,3 +23,17 @@ Also I have made a begin state here where a student can put in their studentnumb
 
 Localstorage is being used to save the user's data, if they come back everything will be the same as first.
 
+
+## HTML elements being used:
+
+- Articles
+  - Cards
+    - img
+    - Heading (h2/h3)
+
+- Form
+  - Fieldset
+    - legend
+      - Input
+      - Label
+
