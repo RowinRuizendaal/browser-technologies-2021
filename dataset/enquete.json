@@ -1,31 +1,49 @@
 [{
         "Subject": "Web App From Scratch",
         "id": 1,
-        "image": "https://www.online-exposure.nl/wp-content/uploads/Progressive-Web-App.jpg"
+        "image": "https://www.online-exposure.nl/wp-content/uploads/Progressive-Web-App.jpg",
+        "opening": "17-03-2021"
     },
     {
         "Subject": "CSS to the Rescue",
         "id": 2,
-        "image": "https://images.unsplash.com/photo-1523437113738-bbd3cc89fb19?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=2000&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ"
+        "image": "https://images.unsplash.com/photo-1523437113738-bbd3cc89fb19?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=2000&fit=max&ixid=eyJhcHBfaWQiOjExNzczfQ",
+        "opening": "17-03-2021"
     },
     {
         "Subject": "Progressive Web App",
         "id": 3,
-        "image": "https://techaffinity.com/blog/wp-content/uploads/2020/01/Progressive-Web-Apps.jpg"
+        "image": "https://techaffinity.com/blog/wp-content/uploads/2020/01/Progressive-Web-Apps.jpg",
+        "opening": "17-03-2021"
     },
     {
         "Subject": "Browser Technologies",
         "id": 4,
-        "image": "https://miro.medium.com/max/2560/0*tphE3TTgZ6q5j9BP.png"
+        "image": "https://miro.medium.com/max/2560/0*tphE3TTgZ6q5j9BP.png",
+        "opening": "17-03-2021"
     },
     {
         "Subject": "Real-Time Web",
         "id": 5,
-        "image": "https://res.cloudinary.com/practicaldev/image/fetch/s--GwKuEKjQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://html5-chat.com/blog/wp-content/uploads/2018/01/webrtc.jpg"
+        "image": "https://res.cloudinary.com/practicaldev/image/fetch/s--GwKuEKjQ--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://html5-chat.com/blog/wp-content/uploads/2018/01/webrtc.jpg",
+        "opening": "17-03-2021"
     },
     {
         "Subject": "Human Centred Design",
         "id": 6,
-        "image": "https://www.510.global/wp-content/uploads/2019/04/510-HCD-1000x600.png"
+        "image": "https://www.510.global/wp-content/uploads/2019/04/510-HCD-1000x600.png",
+        "opening": "17-03-2021"
+    },
+    {
+        "Subject": "Weekly Nerd",
+        "id": 7,
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRl2roVPxi4PCIvyEHT-pE0FOlKAGCSrzVaJA&usqp=CAU",
+        "opening": "17-03-2021"
+    },
+    {
+        "Subject": "Meesterproef",
+        "id": 8,
+        "image": "https://images.prismic.io/studiekeuze123nl/df4e3238-4d1d-4ee8-9e2d-f6e36c5a8bee_shutterstock_667798219-2000px.jpg?auto=compress,format&rect=0,60,2000,970&w=2000&h=970",
+        "opening": "17-03-2021"
     }
 ]

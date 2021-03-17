@@ -3,12 +3,17 @@
         <div class="test">
             <a href="/enquete/<%= data.id %>">
                 <div class="card">
+                    <p class="card_opening">
+                        <%= data.opening %>
+                    </p>
                     <img src="<%= data.image %>" alt="card">
                 </div>
                 <h2 class="card_title">enquete</h2>
-                <p class="card_text">
-                    <%= data.Subject %>
-                </p>
+                <div class="text_container">
+                    <p class="card_text">
+                        <%= data.Subject %>
+                    </p>
+                </div>
                 <button class="btn card_btn">
                 Vul Enquete in
               </button>
