@@ -1,0 +1,32 @@
+{
+    "name": "browser-technologies-2021",
+    "version": "1.0.0",
+    "description": "browser-technologies-2021",
+    "main": "index.js",
+    "directories": {
+        "doc": "docs"
+    },
+    "scripts": {
+        "start": "node index.js",
+        "dev": "npx nodemon"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/RowinRuizendaal/browser-technologies-2021.git"
+    },
+    "author": "Rowin Ruizendaal",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/RowinRuizendaal/browser-technologies-2021/issues"
+    },
+    "homepage": "https://github.com/RowinRuizendaal/browser-technologies-2021#readme",
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "ejs": "^3.1.6",
+        "express": "^4.17.1",
+        "express-router": "0.0.1"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.7"
+    }
+}

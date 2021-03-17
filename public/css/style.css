@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --wit: #FFFF;
+    --backgroundColor: #1a1f2b;
+    --blauw: rgb(38, 114, 236);
+}
+
+main {
+    height: 100vh;
+    overflow: hidden;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* Home */
+
+.imagebackground {
+    background-image: url('https://login.hva.nl/adfs/portal/illustration/illustration-hva.jpg');
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    object-fit: cover;
+}
+
+.login {
+    background-color: var(--wit);
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 30rem;
+    min-height: 100vh;
+}
+
+.formheader {
+    margin-bottom: 2rem;
+    font-size: 1.33em;
+    font-weight: 200;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 30vh;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header img {
+    height: 100%;
+    width: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 90px;
+}
+
+input[type="text"] {
+    height: 28px;
+    padding: 0px 3px 0px 3px;
+    border: solid 1px #BABABA;
+    font-size: 1em;
+    padding: 12px 20px;
+}
+
+.formhome {
+    display: flex;
+    flex-direction: column;
+}
+
+.formhome input[type='submit'] {
+    background-color: var(--blauw);
+    min-width: 80px;
+    width: auto;
+    height: 30px;
+    padding: 4px 20px 6px 20px;
+    border-style: solid;
+    border-width: 1px;
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    margin-bottom: 8px;
+    margin-top: 2rem;
+}
+
+
+/* end of Home */
+
+
+/* Dashboard */
+
+.dashboard {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5rem;
+}
+
+.grid-container {
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 100%;
+    display: grid;
+    grid-template-rows: repeat(auto-fill, minmax(20rem, 1fr));
+    justify-items: center;
+    grid-gap: 4rem;
+    padding: 20px;
+}
+
+.card img {
+    /* width: 100%; */
+    width: 30rem;
+    max-width: 100%;
+    object-fit: cover;
+    height: 15rem;
+}
+
+.card_title {
+    margin-bottom: 0.5rem;
+    margin-top: 2rem;
+    font-weight: 300;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.25;
+    color: #000;
+    text-align: center;
+}
+
+.card_text {
+    color: #000;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+    font-weight: 200;
+    text-align: center;
+}
+
+.btn {
+    display: block;
+    background-repeat: no-repeat;
+    outline: 0;
+    bottom: 10px;
+    padding: 15px 30px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-decoration: none;
+    font-size: 14px;
+    overflow: hidden;
+    transition: 0.2s;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3rem;
+    color: #000;
+    width: 100%;
+    background-color: var(--blauw);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: rgb(212, 227, 251);
+}
+
+a {
+    text-decoration: none;
+}
+
+.test {
+    box-shadow: 0 20px 40px -14px rgba(0, 0, 0, .25);
+    background-color: #fff;
+}
+
+.test:hover .card_btn {
+    background: rgb(212, 227, 251);
+}
+
+
+/* nav */
+
+nav {
+    background: #1a1f2b;
+    height: 10rem;
+}
+
+nav div {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav p {
+    color: white;
+}

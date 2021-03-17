@@ -1,0 +1,18 @@
+<div class="grid-container">
+    <% data.forEach(function(data) { %>
+        <div class="test">
+            <a href="/enquete/<%= data.id %>">
+                <div class="card">
+                    <img src="<%= data.image %>" alt="card">
+                </div>
+                <h2 class="card_title">enquete</h2>
+                <p class="card_text">
+                    <%= data.Subject %>
+                </p>
+                <button class="btn card_btn">
+                Vul Enquete in
+              </button>
+            </a>
+        </div>
+        <% }) %>
+</div>
