@@ -27,9 +27,7 @@ body {
 .imagebackground {
     background-image: url('https://login.hva.nl/adfs/portal/illustration/illustration-hva.jpg');
     height: 100%;
-    background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
     position: relative;
     object-fit: cover;
 }
@@ -42,26 +40,31 @@ body {
     height: 100%;
     width: 30rem;
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .formheader {
     margin-bottom: 2rem;
-    font-size: 1.33em;
+    font-size: 1.2em;
     font-weight: 200;
+    font-weight: lighter;
+    font-family: "Segoe UI", "Segoe", "SegoeUI-Regular-final", Tahoma, Helvetica, Arial, sans-serif;
 }
 
 .form {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     min-height: 30vh;
     flex-direction: column;
 }
 
 .header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: absolute;
+    top: 0;
 }
 
 .header img {
@@ -86,7 +89,8 @@ input[type="text"] {
     flex-direction: column;
 }
 
-.formhome input[type='submit'] {
+.formhome input[type='submit'],
+.next {
     background-color: var(--blauw);
     min-width: 80px;
     width: auto;
@@ -98,6 +102,14 @@ input[type="text"] {
     cursor: pointer;
     margin-bottom: 8px;
     margin-top: 2rem;
+}
+
+.formhome input[type="submit"]:disabled {
+    opacity: 0.2;
+}
+
+.formhome input[type='submit']:not(:disabled):hover {
+    background: rgb(212, 227, 251);
 }
 
 
@@ -218,6 +230,27 @@ a {
 }
 
 
+/* Error message */
+
+.error {
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+.error::before {
+    content: 'i';
+    color: white;
+    background-color: var(--roze);
+    display: inline-block;
+    text-align: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 1.5rem;
+    margin-right: 0.5rem
+}
+
+
 /* nav */
 
 nav {
@@ -237,6 +270,49 @@ nav p {
     color: white;
 }
 
+
+/* end nav */
+
+
+/* Enquete slug */
+
+.form-container {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-right: 40px;
+    margin-bottom: 1rem;
+    flex: 350px;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+.enquete-container {
+    padding: 3rem 2rem 2rem;
+}
+
+.formname label {
+    display: block;
+}
+
+.formname input[type="text"] {
+    display: block;
+}
+
+.enquete-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 @media only screen and (max-width: 600px) {
     .grid-container {
         display: flex;
@@ -244,5 +320,8 @@ nav p {
     }
     .dashboard {
         display: block;
+    }
+    .login {
+        width: 100%;
     }
 }

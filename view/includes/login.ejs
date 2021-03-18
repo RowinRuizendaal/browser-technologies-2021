@@ -3,13 +3,14 @@
         <div class="header">
             <img src="https://login.hva.nl/adfs/portal/logo/hvalogo.png" alt="Hva logo">
         </div>
-        <div class="form">
-            <h2 class="formheader">Login met je HvA-ID</h2>
-            <form action="/enquete" class="formhome" method="POST">
-                <label for="nummer"></label>
-                <input type="text" id='nummer' name="nummer" placeholder="HvA-ID" required>
-                <input type="submit" value="Ga verder">
-            </form>
-        </div>
+        <%- include('error-message') -%>
+            <div class="form">
+                <h2 class="formheader">Vul je HvA-ID in</h2>
+                <form action="/enquete" class="formhome" method="POST">
+                    <label for="nummer"></label>
+                    <input type="text" id='nummer' name="nummer" placeholder="HvA-ID" required oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                    <input type="submit" value="Ga verder" class="next">
+                </form>
+            </div>
     </div>
 </div>
