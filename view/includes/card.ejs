@@ -1,23 +1,33 @@
 <div class="grid-container">
     <% data.forEach(function(data) { %>
-        <div class="test">
-            <a href="/enquete/<%= data.id %>">
-                <div class="card">
-                    <p class="card_opening">
-                        <%= data.opening %>
-                    </p>
-                    <img src="<%= data.image %>" alt="card">
+        <% if (data.locked) { %>
+            <div class="test locked">
+                <div class="overlay">
+                    <h2>
+                        <%= data.Subject %> gaat open op :
+                            <%= data.opening %>
+                    </h2>
                 </div>
-                <h2 class="card_title">enquete</h2>
-                <div class="text_container">
-                    <p class="card_text">
-                        <%= data.Subject %>
-                    </p>
-                </div>
-                <button class="btn card_btn">
+                <% } else {%>
+                    <div class="test">
+                        <a href="/enquete/<%= data.id %>">
+                            <% } %>
+                                <div class="card">
+                                    <p class="card_opening">
+                                        <%= data.opening %>
+                                    </p>
+                                    <img src="<%= data.image %>" alt="card">
+                                </div>
+                                <h2 class="card_title">
+                                    <%= data.Subject %>
+                                </h2>
+                                <div class="text_container">
+
+                                </div>
+                                <button class="btn card_btn">
                 Vul Enquete in
               </button>
-            </a>
-        </div>
-        <% }) %>
-</div>
+                        </a>
+                    </div>
+                    <% }) %>
+            </div>
