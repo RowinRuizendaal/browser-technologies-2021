@@ -365,6 +365,25 @@ nav p {
     flex-direction: column;
 }
 
+
+/* Form stappen */
+
+.stap1 {
+    display: none;
+}
+
+.stap2 {
+    display: none
+}
+
+.stap3 {
+    display: none
+}
+
+.stap4 {
+    display: none;
+}
+
 @media only screen and (max-width: 600px) {
     .grid-container {
         display: flex;

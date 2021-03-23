@@ -1,39 +1,64 @@
 <div class="enquete-container">
     <form action="/submit" method="POST" class="enquete-form">
         <div class="form-container">
-            <div class="form-group">
+            <div class="form-group stap1">
                 <label for="first-name">Voornaam</label>
                 <input type="text" name="first-name">
             </div>
-            <div class="form-group">
+            <div class="form-group stap1">
                 <label for="first-name">achternaam</label>
                 <input type="text" name="first-name">
             </div>
-            <div class="form-group">
-                <label for="first-name">achternaam</label>
-                <input type="text" name="first-name">
+            <div class="form-group stap2">
+                <label for="first-name">Docenten</label>
+                <select name="docenten" id="docenten">
+                    <option value="Rowin">Rowin</option>
+                    <option value="Sanne">Sanne</option>
+                    <option value="Joost">Joost</option>
+                    <option value="overig">Overig</option>
+                </select>
             </div>
-            <div class="form-group">
-                <label for="first-name">achternaam</label>
-                <input type="text" name="first-name">
+            <div class="form-group stap2">
+                <label for="first-name">Begin datum</label>
+                <input type="date" name="data" id="date">
+            </div>
+            <div class="form-group stap3">
+                <label for="first-name">Beoordeling</label>
+                <input type="radio" id="male" name="gender" value="1">
+                <label for="male">1</label><br>
+                <input type="radio" id="female" name="gender" value="2">
+                <label for="female">2</label><br>
+                <input type="radio" id="other" name="gender" value="3">
+                <label for="other">3</label>
+                <input type="radio" id="other" name="gender" value="4">
+                <label for="other">4</label>
+                <input type="radio" id="other" name="gender" value="5">
+                <label for="other">5</label>
+                <input type="radio" id="other" name="gender" value="6">
+                <label for="other">6</label>
+                <input type="radio" id="other" name="gender" value="7">
+                <label for="other">7</label>
+                <input type="radio" id="other" name="gender" value="8">
+                <label for="other">8</label>
+                <input type="radio" id="other" name="gender" value="9">
+                <label for="other">9</label>
+                <input type="radio" id="other" name="gender" value="10">
+                <label for="other">10</label>
+
+            </div>
+            <div class="form-group stap3">
+                <label for="first-name">Hoe moeilijk was het?</label>
+                <input type="text" id="lname" name="lname">
+            </div>
+            <div class="form-group stap4">
+                <label for="first-name">Hoe duidelijk is het uitgelegd?</label>
+                <input type="text" id="lname" name="lname">
+            </div>
+            <div class="form-group stap4">
+                <label for="first-name">Hoe goed snap je het</label>
+                <input type="text" id="lname" name="lname">
             </div>
         </div>
-        <!-- <label for="voornaam">voornaam:</label>
-            <input type="text" id="voornaam" name="voornaam" value="John">
-            <label for="achternaam">achternaam:</label>
-            <input type="text" id="achternaam" name="achternaam" value="John"> -->
-        <!-- <label for="docent">Docent(en)</label>
-        <div class="docent">
-            <input type="radio" id="male" name="gender" value="male">
-            <label for="male">Rowin</label>
-            <input type="radio" id="female" name="gender" value="female">
-            <label for="female">Koop</label>
-            <input type="radio" id="other" name="gender" value="other">
-            <label for="other">Other</label>
-        </div>
-        <label for="beoordeling">Cijfer 1/10</label>
-        <input type="number" id="other" name="beoordeling" value="1" max="10">
-        <label for="lesstof">Wat vind je van de Lesstof</label>
-        <input type="text" id="other" name="lesstof" value="Wat een leuke minor!"> -->
+        <button class="submit next">Volgende stap</button>
     </form>
 </div>
