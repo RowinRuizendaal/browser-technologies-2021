@@ -5,7 +5,6 @@ const dataset = require('../../dataset/enquete.json');
 let id = ''
 
 
-
 router.get('/enquete/:id', async(req, res) => {
 
     if (typeof localStorage === "undefined" || localStorage === null) {
@@ -15,10 +14,7 @@ router.get('/enquete/:id', async(req, res) => {
 
 
     id = req.params.id;
-    const uuid = utils.test()
-
-    console.log(JSON.parse(localStorage.getItem(`${uuid}-${id}`)))
-
+    const uuid = utils.uuid()
 
     if (localStorage.getItem(`${uuid}-${id}`)) {
         return res.render('enquete', {
@@ -31,10 +27,15 @@ router.get('/enquete/:id', async(req, res) => {
     })
 });
 
-
 router.post('/submit', (req, res) => {
 
-    const uuid = utils.test()
+    if (typeof localStorage === "undefined" || localStorage === null) {
+        const LocalStorage = require('node-localstorage').LocalStorage;
+        localStorage = new LocalStorage('./localstorage');
+    }
+
+    // Get uuid
+    const uuid = utils.uuid()
 
     const data = [req.body]
 

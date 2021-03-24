@@ -1,18 +1,11 @@
 const button = document.querySelector('.submit')
-const bedankt = '<h2>Bedankt voor het invullen van de Enquete!<h2>'
+const bedankt = '<h2>Nog even alles op een rij</h2>'
 const backButton = "<a href='../dashboard'><button class='next'>Ga Terug</button></a>"
 const hash = window.location.href
 
 let stap = 1;
 
 
-button.addEventListener('click', (e) => {
-    e.preventDefault();
-    stap++;
-    form(stap)
-    localStorage.setItem(hash, JSON.stringify(stap))
-
-})
 
 
 const form = (stap) => {
@@ -35,11 +28,14 @@ const form = (stap) => {
         queryAll('.stap3', 'none')
         queryAll('.stap4', 'flex')
     }
-
     if (stap == 5) {
-        queryAll('.enquete-form', 'none')
         query('.enquete-container').insertAdjacentHTML('beforeend', bedankt)
-        query('.enquete-container').insertAdjacentHTML('beforeend', backButton)
+        queryAll('.submit', 'none')
+        queryAll('.no-js', 'block')
+        queryAll('.stap1', 'flex')
+        queryAll('.stap2', 'flex')
+        queryAll('.stap3', 'flex')
+        queryAll('.stap4', 'flex')
     }
 }
 
@@ -48,7 +44,7 @@ const query = (element, display) => {
     if (display) {
         return document.querySelector(element).display = display
     }
-
+    console.log(document.querySelector(element))
     return document.querySelector(element)
 }
 
@@ -63,6 +59,15 @@ const createElement = (type, classname) => {
     create.classname = classname
     return create
 }
+
+button.addEventListener('click', (e) => {
+    e.preventDefault();
+    stap++;
+    form(stap)
+    localStorage.setItem(hash, JSON.stringify(stap))
+
+})
+
 
 window.onload = () => {
     if (localStorage.getItem(hash)) {

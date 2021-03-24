@@ -23,11 +23,11 @@ router.post('/enquete', (req, res) => {
     // check how long the integer is
     const len = Math.ceil(Math.log10(integer + 1));
 
-    const setnummer = utils.test(integer)
 
     // Check if Student is in the list for participating
     const checkstudent = utils.checkstudent(studenten, postvalue)
 
+    const setuuid = utils.uuid(postvalue)
 
     // Check for error and return feedback
     if (!postvalue || len < 9 || len > 9 || isNaN(len) || !checkstudent) {

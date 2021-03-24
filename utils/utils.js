@@ -34,11 +34,10 @@ const checkstudent = (dataset, value) => {
 
 }
 
-const test = (value) => {
+const uuid = (value) => {
     if (value) {
         return postvalue = value
     }
-    console.log('value is', postvalue)
     return postvalue
 }
 
@@ -46,5 +45,5 @@ const test = (value) => {
 module.exports = {
     map,
     checkstudent,
-    test,
+    uuid,
 }
