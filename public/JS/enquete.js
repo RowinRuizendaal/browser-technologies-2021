@@ -60,11 +60,6 @@ const queryAll = (element, display) => {
 const createElement = (type, classname) => {
     let create = document.createElement(type)
     create.classname = classname
-
-    // if (type === button) {
-    //     create.setAttribute('type', 'button')
-    // }
-
     return create
 }
 
@@ -72,5 +67,5 @@ window.onload = () => {
     if (localStorage.getItem(hash)) {
         return form(JSON.parse(localStorage.getItem(hash)))
     }
-    form(1)
+    form(stap)
 }

@@ -2,16 +2,16 @@
     <form action="/submit" method="POST" class="enquete-form">
         <div class="form-container">
             <div class="form-group stap1">
-                <label for="first-name">Voornaam</label>
-                <input type="text" name="first-name">
+                <label for="firstName">Voornaam</label>
+                <input type="text" name="firstName" required>
             </div>
             <div class="form-group stap1">
-                <label for="first-name">achternaam</label>
-                <input type="text" name="first-name">
+                <label for="lastName">achternaam</label>
+                <input type="text" name="lastName" required>
             </div>
             <div class="form-group stap2">
                 <label for="first-name">Docenten</label>
-                <select name="docenten" id="docenten">
+                <select name="docenten" id="docenten" required>
                     <option value="Rowin">Rowin</option>
                     <option value="Sanne">Sanne</option>
                     <option value="Joost">Joost</option>
@@ -20,11 +20,11 @@
             </div>
             <div class="form-group stap2">
                 <label for="first-name">Begin datum</label>
-                <input type="date" name="data" id="date">
+                <input type="date" name="data" id="date" required>
             </div>
             <div class="form-group stap3">
                 <label for="first-name">Beoordeling</label>
-                <input type="radio" id="male" name="gender" value="1">
+                <input type="radio" id="male" name="gender" value="1" required>
                 <label for="male">1</label><br>
                 <input type="radio" id="female" name="gender" value="2">
                 <label for="female">2</label><br>
@@ -48,17 +48,18 @@
             </div>
             <div class="form-group stap3">
                 <label for="first-name">Hoe moeilijk was het?</label>
-                <input type="text" id="lname" name="lname">
+                <input type="text" id="lname" name="lname" required>
             </div>
             <div class="form-group stap4">
                 <label for="first-name">Hoe duidelijk is het uitgelegd?</label>
-                <input type="text" id="lname" name="lname">
+                <input type="text" id="lname" name="lname" required>
             </div>
             <div class="form-group stap4">
                 <label for="first-name">Hoe goed snap je het</label>
-                <input type="text" id="lname" name="lname">
+                <input type="text" id="lname" name="lname" required>
             </div>
         </div>
         <button class="submit next">Volgende stap</button>
+        <button class="submit no-js" type="submit">Volgende stap</button>
     </form>
 </div>

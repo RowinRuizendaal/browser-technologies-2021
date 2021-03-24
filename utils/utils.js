@@ -1,6 +1,6 @@
 const TodayDate = new Date();
 const formatData = `${TodayDate.getDate()}/${(TodayDate.getMonth() + 1)}/${TodayDate.getFullYear()}`
-
+let postvalue = ''
 
 const map = (dataset) => {
     return dataset.map((el) => {
@@ -24,7 +24,26 @@ const map = (dataset) => {
     })
 }
 
+const checkstudent = (dataset, value) => {
+    return dataset.map((el) => {
+        if (value === el.student) {
+            return true
+        }
+        return false
+    })
+}
+
+const test = (value) => {
+    if (value) {
+        return postvalue = value
+    }
+    console.log('value is', postvalue)
+    return postvalue
+}
+
 
 module.exports = {
-    map
+    map,
+    checkstudent,
+    test
 }

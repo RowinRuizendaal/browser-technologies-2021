@@ -21,6 +21,10 @@ body {
     font-family: 'Poppins', sans-serif;
 }
 
+main {
+    background-color: #F6F7F8
+}
+
 
 /* Home */
 
@@ -288,6 +292,7 @@ a {
     border-radius: 6px;
     font-size: 1rem;
     font-weight: normal;
+    max-width: 15rem;
 }
 
 .error::before {
@@ -363,6 +368,12 @@ nav p {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    box-shadow: 0 20px 40px -14px rgba(0, 0, 0, .25);
+    background-color: #fff;
+}
+
+.no-js {
+    display: none;
 }
 
 
@@ -383,6 +394,9 @@ nav p {
 .stap4 {
     display: none;
 }
+
+
+/* No javascript styling */
 
 @media only screen and (max-width: 600px) {
     .grid-container {

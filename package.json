@@ -25,7 +25,8 @@
         "ejs": "^3.1.6",
         "express": "^4.17.1",
         "express-router": "0.0.1",
-        "moment": "^2.29.1"
+        "moment": "^2.29.1",
+        "node-localstorage": "^2.1.6"
     },
     "devDependencies": {
         "nodemon": "^2.0.7"
