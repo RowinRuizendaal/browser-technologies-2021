@@ -5,28 +5,40 @@ const dataset = require('../../dataset/enquete.json');
 let id = ''
 
 
-if (typeof localStorage === "undefined" || localStorage === null) {
-    const LocalStorage = require('node-localstorage').LocalStorage;
-    localStorage = new LocalStorage('./localstorage');
-}
 
 router.get('/enquete/:id', async(req, res) => {
+
+    if (typeof localStorage === "undefined" || localStorage === null) {
+        const LocalStorage = require('node-localstorage').LocalStorage;
+        localStorage = new LocalStorage('./localstorage');
+    }
+
+
     id = req.params.id;
-    console.log(id)
+    const uuid = utils.test()
 
-    const test = utils.test()
+    console.log(JSON.parse(localStorage.getItem(`${uuid}-${id}`)))
 
-    console.log(test)
 
-    res.render('enquete')
+    if (localStorage.getItem(`${uuid}-${id}`)) {
+        return res.render('enquete', {
+            data: JSON.parse(localStorage.getItem(`${uuid}-${id}`))
+        })
+    }
+
+    return res.render('enquete', {
+        data: ''
+    })
 });
 
 
 router.post('/submit', (req, res) => {
 
-    const test = utils.test()
+    const uuid = utils.test()
 
-    localStorage.setItem(`${test}-${id}`, JSON.stringify(req.body));
+    const data = [req.body]
+
+    localStorage.setItem(`${uuid}-${id}`, JSON.stringify(data));
 
 
     // Check if form can be filled in based on dates

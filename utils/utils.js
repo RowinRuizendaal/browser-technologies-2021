@@ -25,12 +25,13 @@ const map = (dataset) => {
 }
 
 const checkstudent = (dataset, value) => {
-    return dataset.map((el) => {
-        if (value === el.student) {
+    for (let i = 0; i < dataset.length; i++) {
+        if (dataset[i].student === value) {
             return true
         }
-        return false
-    })
+    }
+    return false
+
 }
 
 const test = (value) => {
@@ -45,5 +46,5 @@ const test = (value) => {
 module.exports = {
     map,
     checkstudent,
-    test
+    test,
 }

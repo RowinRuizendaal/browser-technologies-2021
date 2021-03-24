@@ -42,7 +42,7 @@ main {
     top: 0;
     right: 0;
     height: 100%;
-    width: 30rem;
+    width: 32rem;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -94,7 +94,8 @@ input[type="text"] {
 }
 
 .formhome input[type='submit'],
-.next {
+.next,
+.no-js {
     background-color: var(--blauw);
     min-width: 80px;
     width: auto;

@@ -6,6 +6,7 @@ const utils = require('../../utils/utils')
 
 
 
+
 router.get('/', (req, res) => {
     res.render('index', {
         error: undefined
@@ -27,8 +28,9 @@ router.post('/enquete', (req, res) => {
     // Check if Student is in the list for participating
     const checkstudent = utils.checkstudent(studenten, postvalue)
 
+
     // Check for error and return feedback
-    if (!postvalue || len < 9 || len > 9 || isNaN(len) || !checkstudent[0]) {
+    if (!postvalue || len < 9 || len > 9 || isNaN(len) || !checkstudent) {
         return res.render('index.ejs', {
             error: 'Studentnummer niet bekend of niet geautoriseerd'
         })

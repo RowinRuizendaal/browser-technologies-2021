@@ -1,0 +1,62 @@
+<% data.forEach(function(data) { %>
+    <div class="form-container">
+        <div class="form-group stap1">
+            <label for="firstName">Voornaam</label>
+            <input type="text" name="firstName" required value="<%= data.firstName%>">
+        </div>
+        <div class="form-group stap1">
+            <label for="lastName">achternaam</label>
+            <input type="text" name="lastName" required value="<%= data.lastName %>">
+        </div>
+        <div class="form-group stap2">
+            <label for="first-name">Docenten</label>
+            <select name="docenten" id="docenten" required value="<%=data.docenten %>">
+                <option value="Rowin">Rowin</option>
+                <option value="Sanne">Sanne</option>
+                <option value="Joost">Joost</option>
+                <option value="overig">Overig</option>
+            </select>
+        </div>
+        <div class="form-group stap2">
+            <label for="first-name">Begin datum</label>
+            <input type="date" name="data" id="date" required value="<%= data.data%>">
+        </div>
+        <div class="form-group stap3">
+            <label for="first-name">Beoordeling</label>
+            <input type="radio" id="male" name="review" value="1" required>
+            <label for="male">1</label><br>
+            <input type="radio" id="female" name="review" value="2">
+            <label for="female">2</label><br>
+            <input type="radio" id="other" name="review" value="3">
+            <label for="other">3</label>
+            <input type="radio" id="other" name="review" value="4">
+            <label for="other">4</label>
+            <input type="radio" id="other" name="review" value="5">
+            <label for="other">5</label>
+            <input type="radio" id="other" name="review" value="6">
+            <label for="other">6</label>
+            <input type="radio" id="other" name="review" value="7">
+            <label for="other">7</label>
+            <input type="radio" id="other" name="review" value="8">
+            <label for="other">8</label>
+            <input type="radio" id="other" name="review" value="9">
+            <label for="other">9</label>
+            <input type="radio" id="other" name="review" value="10">
+            <label for="other">10</label>
+
+        </div>
+        <div class="form-group stap3">
+            <label for="first-name">Hoe moeilijk was het?</label>
+            <input type="text" id="lname" name="difficult" required value="<%= data.difficult %>">
+        </div>
+        <div class="form-group stap4">
+            <label for="first-name">Hoe duidelijk is het uitgelegd?</label>
+            <input type="text" id="lname" name="clarity" required value="<%= data.clarity %>">
+        </div>
+        <div class="form-group stap4">
+            <label for="first-name">Hoe goed snap je het</label>
+            <input type="text" id="lname" name="understanding" required value="<%= data.understanding %>">
+        </div>
+    </div>
+    </form>
+    <% }) %>

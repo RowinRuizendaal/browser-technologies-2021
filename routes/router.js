@@ -6,7 +6,6 @@ router.use(bodyParser.urlencoded({
     extended: true,
 }));
 
-let postvalue = ''
 
 
 

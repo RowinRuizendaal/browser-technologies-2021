@@ -1,5 +1,6 @@
 const button = document.querySelector('.submit')
-const bedankt = 'Bedankt voor het invullen van de Enquete!'
+const bedankt = '<h2>Bedankt voor het invullen van de Enquete!<h2>'
+const backButton = "<a href='../dashboard'><button class='next'>Ga Terug</button></a>"
 const hash = window.location.href
 
 let stap = 1;
@@ -36,9 +37,9 @@ const form = (stap) => {
     }
 
     if (stap == 5) {
-        const make = createElement('button', 'next')
         queryAll('.enquete-form', 'none')
-        query('.enquete-container').innerHTML = `${bedankt}<button class='next'>Ga terug</button>`
+        query('.enquete-container').insertAdjacentHTML('beforeend', bedankt)
+        query('.enquete-container').insertAdjacentHTML('beforeend', backButton)
     }
 }
 
