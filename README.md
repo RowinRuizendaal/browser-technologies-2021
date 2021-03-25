@@ -36,11 +36,27 @@ Firefox
 
 IOS (safari)
 
-![image](https://raw.githubusercontent.com/RowinRuizendaal/web-app-from-scratch-2021/master/docs/onderzoek/1.png)
+![image](https://github.com/RowinRuizendaal/browser-technologies-2021/blob/master/docs/onderzoek/1.png?raw=true)
 
 Button has default styling
 
 > -webkit-appearance: none;
+
+![image](https://github.com/RowinRuizendaal/browser-technologies-2021/blob/master/docs/onderzoek/2.png?raw=true)
+
+> Css variables not supported
+
+```CSS
+@supports(--css: variables) {
+     :root {
+        --wit: #FFFF;
+        --backgroundColor: #1a1f2b;
+        --blauw: rgb(38, 114, 236);
+        --roze: #e94560
+    }
+}
+````
+
 
 Android (Samsung internet)
 
