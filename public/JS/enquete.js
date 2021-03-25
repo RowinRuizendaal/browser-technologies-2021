@@ -1,17 +1,16 @@
 const button = document.querySelector('.submit')
 const bedankt = '<h2>Nog even alles op een rij</h2>'
-const backButton = "<a href='../dashboard'><button class='next'>Ga Terug</button></a>"
 const hash = window.location.href
+const awnser = `${hash}-awnser`
 
 let stap = 1;
 
 
-
-
-const form = (stap) => {
+function form(stap) {
 
     if (stap == 1) {
         queryAll('.stap1', 'flex')
+
     }
 
     if (stap === 2) {
@@ -29,7 +28,6 @@ const form = (stap) => {
         queryAll('.stap4', 'flex')
     }
     if (stap == 5) {
-        query('.enquete-container').insertAdjacentHTML('beforeend', bedankt)
         queryAll('.submit', 'none')
         queryAll('.no-js', 'block')
         queryAll('.stap1', 'flex')
@@ -40,7 +38,7 @@ const form = (stap) => {
 }
 
 
-const query = (element, display) => {
+function query(element, display) {
     if (display) {
         return document.querySelector(element).display = display
     }
@@ -48,28 +46,28 @@ const query = (element, display) => {
     return document.querySelector(element)
 }
 
-const queryAll = (element, display) => {
+function queryAll(element, display) {
     return document.querySelectorAll(element).forEach((item) => {
         item.style.display = display
     })
 }
 
-const createElement = (type, classname) => {
+function createElement(type, classname) {
     let create = document.createElement(type)
     create.classname = classname
     return create
 }
 
-button.addEventListener('click', (e) => {
-    e.preventDefault();
-    stap++;
+button.addEventListener('click', function(e) {
+    e.preventDefault()
+    stap++
     form(stap)
     localStorage.setItem(hash, JSON.stringify(stap))
 
 })
 
 
-window.onload = () => {
+window.onload = function() {
     if (localStorage.getItem(hash)) {
         return form(JSON.parse(localStorage.getItem(hash)))
     }
