@@ -1,7 +1,7 @@
 const button = document.querySelector('.submit')
 const bedankt = '<h2>Nog even alles op een rij</h2>'
 const hash = window.location.href
-const awnser = `${hash}-awnser`
+const awnser = hash + '-awnser'
 
 let stap = 1;
 
