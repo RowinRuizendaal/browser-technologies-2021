@@ -35,6 +35,13 @@ Firefox
 ## Mobile
 
 IOS (safari)
+
+![image](https://raw.githubusercontent.com/RowinRuizendaal/web-app-from-scratch-2021/master/docs/onderzoek/1.png)
+
+Button has default styling
+
+> -webkit-appearance: none;
+
 Android (Samsung internet)
 
 

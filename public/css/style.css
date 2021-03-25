@@ -5,16 +5,17 @@
     box-sizing: border-box;
 }
 
-:root {
-    --wit: #FFFF;
-    --backgroundColor: #1a1f2b;
-    --blauw: rgb(38, 114, 236);
-    --roze: #e94560
+@supports(--css: variables) {
+     :root {
+        --wit: #FFFF;
+        --backgroundColor: #1a1f2b;
+        --blauw: rgb(38, 114, 236);
+        --roze: #e94560
+    }
 }
 
 .home {
     height: 100vh;
-    /* overflow: hidden; */
 }
 
 body {
@@ -38,16 +39,13 @@ main {
 
 .login {
     background-color: var(--wit);
+    background-color: #FFFF;
     position: absolute;
     top: 0;
     right: 0;
     height: 100%;
     width: 32rem;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 .formheader {
@@ -59,11 +57,7 @@ main {
 }
 
 .form {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
     min-height: 30vh;
-    flex-direction: column;
 }
 
 .header {
@@ -74,9 +68,6 @@ main {
 .header img {
     height: 100%;
     width: 20rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     padding-top: 90px;
 }
 
@@ -88,15 +79,11 @@ input[type="text"] {
     padding: 12px 20px;
 }
 
-.formhome {
-    display: flex;
-    flex-direction: column;
-}
-
 .formhome input[type='submit'],
 .next,
 .no-js {
     background-color: var(--blauw);
+    background-color: rgb(38, 114, 236);
     min-width: 80px;
     width: auto;
     height: 30px;
@@ -135,12 +122,7 @@ input[type="text"] {
 }
 
 .grid-container {
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-columns: repeat(auto-fill, 30rem);
     width: 100%;
-    display: grid;
-    justify-items: center;
-    grid-gap: 4rem;
     padding: 20px;
     background-color: blue;
     padding: 50px 30px 20px 30px;
@@ -177,11 +159,6 @@ input[type="text"] {
     margin-bottom: 2rem;
 }
 
-.text_container {
-    display: flex;
-    flex-direction: column;
-}
-
 .card_text {
     color: #000;
     font-size: 1rem;
@@ -193,17 +170,18 @@ input[type="text"] {
 
 .card_opening {
     margin-bottom: 0;
-    background-color: var(--roze);
+    background-color: #e94560;
     width: 100%;
     max-width: 10rem;
     color: var(--wit);
+    color: #FFFF;
     position: absolute;
 }
 
 .card_opening::before {
     content: 'i';
     color: white;
-    background-color: var(--roze);
+    background-color: #e94560;
     display: inline-block;
     text-align: center;
     width: 1.5rem;
@@ -229,6 +207,7 @@ input[type="text"] {
     color: #000;
     width: 100%;
     background-color: var(--blauw);
+    background-color: rgb(38, 114, 236);
     color: #fff;
     border: none;
     cursor: pointer;
@@ -257,6 +236,7 @@ a {
     height: 100%;
     width: 100%;
     background-color: var(--blauw);
+    background-color: rgb(38, 114, 236);
     color: white;
     display: none;
     text-align: center;
@@ -276,12 +256,6 @@ a {
     position: relative;
 }
 
-.locked:hover .overlay {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .locked:hover {
     opacity: 1;
 }
@@ -299,7 +273,7 @@ a {
 .error::before {
     content: 'i';
     color: white;
-    background-color: var(--roze);
+    background-color: #e94560;
     display: inline-block;
     text-align: center;
     width: 1.5rem;
@@ -313,15 +287,13 @@ a {
 
 nav {
     background: var(--blauw);
+    background: rgb(38, 114, 236);
     height: 10rem;
 }
 
 nav div {
     height: 100%;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 nav p {
@@ -335,25 +307,16 @@ nav p {
 /* Enquete slug */
 
 .enquete {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background: none;
 }
 
 .form-container {
     margin: 2rem 0;
-    display: flex;
-    justify-content: flex-start;
-    flex-wrap: wrap;
 }
 
 .form-group {
-    display: flex;
-    flex-direction: column;
     margin-right: 40px;
     margin-bottom: 1rem;
-    flex: 350px;
     margin: 1rem;
     padding: 1rem;
     border-radius: 5px;
@@ -372,10 +335,6 @@ nav p {
 }
 
 .enquete-form {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     box-shadow: 0 20px 40px -14px rgba(0, 0, 0, .25);
     background-color: #fff;
     position: relative;
@@ -392,6 +351,7 @@ nav p {
     margin-top: 24px;
     border-radius: .375rem;
     background-color: var(--blauw);
+    background-color: rgb(38, 114, 236);
     box-shadow: 0 3px 3px -2px rgba(5, 5, 30, .05), 0 3px 4px 0 rgba(5, 5, 30, .03), 0 1px 8px 0 rgba(5, 5, 30, .06);
     transform: translateX(24px);
 }
@@ -419,13 +379,84 @@ nav p {
     display: none;
 }
 
+@supports (display: grid) {
+    .grid-container {
+        display: grid;
+        justify-items: center;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: repeat(auto-fill, 30rem);
+        grid-gap: 4rem;
+    }
+}
+
+@supports (display: flex) {
+    .login {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .form {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    .header img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .formhome {
+        display: flex;
+        flex-direction: column;
+    }
+    .text_container {
+        display: flex;
+        flex-direction: column;
+    }
+    .locked:hover .overlay {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    nav div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .enquete {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .form-container {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        flex: 350px;
+    }
+    .enquete-form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
 
 /* No javascript styling */
 
 @media only screen and (max-width: 600px) {
-    .grid-container {
-        display: flex;
-        flex-direction: column;
+    @supports (display: flex) {
+        .grid-container {
+            display: flex;
+            flex-direction: column;
+        }
     }
     .dashboard {
         display: block;
