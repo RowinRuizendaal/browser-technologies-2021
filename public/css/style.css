@@ -38,6 +38,10 @@ main {
 }
 
 .login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: var(--wit);
     background-color: #FFFF;
     position: absolute;
@@ -57,7 +61,16 @@ main {
 }
 
 .form {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
     min-height: 30vh;
+}
+
+.formhome {
+    display: flex;
+    flex-direction: column;
 }
 
 .header {
@@ -66,6 +79,9 @@ main {
 }
 
 .header img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100%;
     width: 20rem;
     padding-top: 90px;
@@ -292,6 +308,9 @@ nav {
 }
 
 nav div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100%;
     width: 100%;
 }
@@ -307,14 +326,28 @@ nav p {
 /* Enquete slug */
 
 .enquete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background: none;
 }
 
 .form-container {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
     margin: 2rem 0;
 }
 
 .form-group {
+    display: flex;
+    flex-direction: column;
+    flex: 350px;
+    margin-right: 40px;
+    margin-bottom: 1rem;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 5px;
     margin-right: 40px;
     margin-bottom: 1rem;
     margin: 1rem;
@@ -335,6 +368,10 @@ nav p {
 }
 
 .enquete-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     box-shadow: 0 20px 40px -14px rgba(0, 0, 0, .25);
     background-color: #fff;
     position: relative;
@@ -434,11 +471,6 @@ nav p {
         display: flex;
         justify-content: flex-start;
         flex-wrap: wrap;
-    }
-    .form-group {
-        display: flex;
-        flex-direction: column;
-        flex: 350px;
     }
     .enquete-form {
         display: flex;

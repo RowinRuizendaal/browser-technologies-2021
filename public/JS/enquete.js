@@ -42,14 +42,15 @@ function query(element, display) {
     if (display) {
         return document.querySelector(element).display = display
     }
-    console.log(document.querySelector(element))
     return document.querySelector(element)
 }
 
 function queryAll(element, display) {
-    return document.querySelectorAll(element).forEach((item) => {
-        item.style.display = display
-    })
+    if (typeof document.querySelectorAll === 'function') {
+        return document.querySelectorAll(element).forEach((item) => {
+            item.style.display = display
+        })
+    }
 }
 
 function createElement(type, classname) {
@@ -58,13 +59,22 @@ function createElement(type, classname) {
     return create
 }
 
-button.addEventListener('click', function(e) {
-    e.preventDefault()
-    stap++
-    form(stap)
-    localStorage.setItem(hash, JSON.stringify(stap))
+if (typeof document.addEventListener === 'function') {
+    button.addEventListener('click', function(e) {
+        e.preventDefault()
+        stap++
+        form(stap)
+        localStorage.setItem(hash, JSON.stringify(stap))
 
-})
+    })
+} else {
+    button.attachEvent('click', function(e) {
+        e.preventDefault()
+        stap++
+        form(stap)
+        localStorage.setItem(hash, JSON.stringify(stap))
+    })
+}
 
 
 window.onload = function() {
