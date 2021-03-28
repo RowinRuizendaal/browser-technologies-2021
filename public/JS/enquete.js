@@ -1,12 +1,37 @@
-const button = document.querySelector('.submit')
-const bedankt = '<h2>Nog even alles op een rij</h2>'
+import {
+    checkStorage,
+    setItem,
+    query,
+    queryAll
+} from './utils/utils.js'
+
+const button = query('.submit')
 const hash = window.location.href
-const awnser = hash + '-awnser'
+const hashAwnser = `${hash}-awnsers`
 
 let stap = 1;
 
+const formFields = [
+    'firstName',
+    'lastName',
+    // '#docenten',
+    'date',
+    'difficult',
+    'clarity',
+    'understanding'
+]
+
 
 function form(stap) {
+
+
+    // Set localstorage for items that have a value
+    for (let i = 0; i < formFields.length; i++) {
+        if (document.getElementById(formFields[i]).value) {
+            const value = document.getElementById(formFields[i]).value
+            setItem(hashAwnser, value, formFields[i])
+        }
+    }
 
     if (stap == 1) {
         queryAll('.stap1', 'flex')
@@ -38,48 +63,38 @@ function form(stap) {
 }
 
 
-function query(element, display) {
-    if (display) {
-        return document.querySelector(element).display = display
-    }
-    return document.querySelector(element)
-}
 
-function queryAll(element, display) {
-    if (typeof document.querySelectorAll === 'function') {
-        return document.querySelectorAll(element).forEach((item) => {
-            item.style.display = display
-        })
-    }
-}
 
-function createElement(type, classname) {
-    let create = document.createElement(type)
-    create.classname = classname
-    return create
-}
-
-if (typeof document.addEventListener === 'function') {
-    button.addEventListener('click', function(e) {
-        e.preventDefault()
-        stap++
-        form(stap)
-        localStorage.setItem(hash, JSON.stringify(stap))
-
-    })
-} else {
-    button.attachEvent('click', function(e) {
-        e.preventDefault()
-        stap++
-        form(stap)
-        localStorage.setItem(hash, JSON.stringify(stap))
-    })
-}
+button.addEventListener('click', function(e) {
+    e.preventDefault()
+    stap++
+    form(stap)
+    localStorage.setItem(hash, stap)
+})
 
 
 window.onload = function() {
-    if (localStorage.getItem(hash)) {
-        return form(JSON.parse(localStorage.getItem(hash)))
+    if (checkStorage(hash)) {
+        const values = checkStorage(hashAwnser)
+
+        if (values) {
+            const storage = JSON.parse(checkStorage(hashAwnser))
+            const length = storage.length
+
+            for (let i = 0; i < length; i++) {
+                for (let key in storage[i]) {
+                    let declaration = document.getElementById(key)
+                    for (let [key, value] of Object.entries(storage[i])) {
+                        declaration.value = value
+                        console.log(value);
+                      }
+                }
+            }
+        }
+
+        form(checkStorage(hash))
     }
+
+
     form(stap)
 }
