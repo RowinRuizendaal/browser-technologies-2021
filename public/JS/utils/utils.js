@@ -11,7 +11,11 @@ export const checkStorage = (item) => {
 
     } else {
         // Too bad, no localStorage for us
-        console.log('disabled')
+        if (query('.localstorage')) {
+            const localstorage = query('.localstorage')
+            localstorage.style.display = 'block'
+            query('.localstorage p').innerHTML = 'Localstorage staat uit, hierdoor kunnen wij niet de beste UX aan u leveren.'
+        }
     }
 }
 

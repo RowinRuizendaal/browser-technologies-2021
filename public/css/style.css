@@ -293,11 +293,13 @@ a {
 
 /* Error message */
 
-.error {
+.error,
+.localstorage {
     border-radius: 6px;
     font-size: 1rem;
     font-weight: normal;
     max-width: 15rem;
+    margin-bottom: 2rem;
 }
 
 .error::before {
@@ -310,6 +312,11 @@ a {
     height: 1.5rem;
     border-radius: 1.5rem;
     margin-right: 0.5rem
+}
+
+.localstorage {
+    display: none;
+    width: 20rem;
 }
 
 

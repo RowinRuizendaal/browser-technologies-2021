@@ -31,6 +31,21 @@ Also I have made a begin state here where a student can put in their studentnumb
 
 Localstorage is being used to save the user's data, if they come back everything will be the same as first.
 
+
+Localstorage Studentnumber structure:
+
+```js
+studentnumber: "500813624"
+```
+
+LocalStorage enquete structure:
+
+```js
+
+[{"firstName":"Rowin"},{"lastName":"Ruizendaal"},{"docenten":"Sanne 't hooft"},{"date":"2021-03-18"},{"difficult":"Best wel moeilijk :("},{"clarity":"heel duidelijk"},{"understanding":"goed"}]
+
+```
+
 ## Desktop Browsers
 
 Firefox
@@ -78,7 +93,7 @@ Localstorage
 const storageAvailable = (type) => {
     try {
         const storage = window[type],
-            x = '__storage_test__';
+        x = '__storage_test__';
         storage.setItem(x, x);
         storage.removeItem(x);
         return true;
@@ -88,12 +103,16 @@ const storageAvailable = (type) => {
 }
 ```
 
+
+
 ```js
     if (storageAvailable('localStorage')) {
       // Do something
     }
 
 ```
+
+![image](https://raw.githubusercontent.com/RowinRuizendaal/browser-technologies-2021/master/docs/img/localstorage-off.png)
 
 querySelectorAll
 
@@ -150,6 +169,15 @@ if (typeof document.addEventListener === 'function') {
   // use attachEvent
 }
 ```
+
+
+## Cut in the mustard
+
+### For loops
+
+Since most browsers support for loops instead of for each, I will be using for loops instead of checking if the browser supports forEach beacuse, for loops are faster then foreach loops and it also makes my code more DRY, instead of writing the same code over and over.
+
+
 
 ## Modifications
 
