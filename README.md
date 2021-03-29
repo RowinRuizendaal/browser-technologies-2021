@@ -40,11 +40,26 @@ studentnumber: "500813624"
 
 LocalStorage enquete structure:
 
+> http://localhost:3000/enquete/1-awnsers
+
+Keeping track of the answers that have filled in
+
 ```js
 
 [{"firstName":"Rowin"},{"lastName":"Ruizendaal"},{"docenten":"Sanne 't hooft"},{"date":"2021-03-18"},{"difficult":"Best wel moeilijk :("},{"clarity":"heel duidelijk"},{"understanding":"goed"}]
 
 ```
+
+> http://localhost:3000/enquete/1
+
+```js
+2
+```
+
+Keeping track of where the person left off (this will take you back to the form step)
+
+
+
 
 ## Desktop Browsers
 
@@ -57,7 +72,7 @@ Firefox
 
 ## Mobile
 
-IOS (safari)
+### IOS (safari)
 
 ![image](https://github.com/RowinRuizendaal/browser-technologies-2021/blob/master/docs/onderzoek/1.png?raw=true)
 
@@ -66,6 +81,9 @@ Button has default styling
 > -webkit-appearance: none;
 
 ![image](https://github.com/RowinRuizendaal/browser-technologies-2021/blob/master/docs/onderzoek/2.png?raw=true)
+
+
+### CSS variables
 
 > Css variables not supported
 
@@ -80,14 +98,89 @@ Button has default styling
 }
 ````
 
+### Supports flex - grid
 
-Android (Samsung internet)
+```CSS
+@supports (display: grid) {
+    .grid-container {
+        display: grid;
+        justify-items: center;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: repeat(auto-fill, 30rem);
+        grid-gap: 4rem;
+    }
+}
+
+
+@supports (display: flex) {
+    .login {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .form {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+    .header img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .formhome {
+        display: flex;
+        flex-direction: column;
+    }
+    .text_container {
+        display: flex;
+        flex-direction: column;
+    }
+    .locked:hover .overlay {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    nav div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .enquete {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .form-container {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+    .enquete-form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .buttons {
+        display: flex;
+    }
+}
+
+
+
+```
+
+
+### Android (Samsung internet)
 
 
 ## Feature detection
 
 
-Localstorage
+### Localstorage
 
 ```js
 const storageAvailable = (type) => {
@@ -112,9 +205,11 @@ const storageAvailable = (type) => {
 
 ```
 
+#### Feedforward Localstorage off
+
 ![image](https://raw.githubusercontent.com/RowinRuizendaal/browser-technologies-2021/master/docs/img/localstorage-off.png)
 
-querySelectorAll
+### querySelectorAll
 
 Since there is no good crossbrowser alternative to querySelector, my main check is whether querySelector is available in the browser. QuerySelector is fully supported from IE9, allowing me to use all functions that are also supported from IE9 in my code.
 
@@ -126,7 +221,7 @@ if (typeof document.querySelectorAll === 'function') {
 }
 ```
 
-array.includes
+### array.includes
 
 .includes () is not supported in IE and older browsers. An alternative to this is .indexOf (). With this I can still see which names do not match the search and hide them.
 
@@ -140,7 +235,7 @@ if (typeof [].includes === 'function') {
 }
 ```
 
-forEach
+### forEach
 
 ForEach () is fully supported from IE10. So in IE9 forEach () should be replaced with for loops.
 
@@ -155,10 +250,8 @@ if (typeof NodeList.prototype.forEach === 'function') {
 }
 ```
 
-addEventListener
+### addEventListener
 
-
-The 'back to top' button is separate from the search functions of the app. Hence, I can make it available in browsers older than IE9. I am replacing addEventListener with attachEvent in these browsers. Since attachEvent is supported up to IE8, I have to detect this function as well.
 
 [EventListner](https://caniuse.com/?search=addeventlistener)
 
@@ -176,6 +269,11 @@ if (typeof document.addEventListener === 'function') {
 ### For loops
 
 Since most browsers support for loops instead of for each, I will be using for loops instead of checking if the browser supports forEach beacuse, for loops are faster then foreach loops and it also makes my code more DRY, instead of writing the same code over and over.
+
+
+### EventListener
+
+EventListeners are not supported in IE 6-8, this version of IE has been released since Aug 27, 2001 this is the only browser that does not support the Event.addEventListener() method.
 
 
 
