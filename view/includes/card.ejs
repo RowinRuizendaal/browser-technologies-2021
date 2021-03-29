@@ -1,7 +1,7 @@
 <div class="grid-container">
     <% data.forEach(function(data) { %>
         <% if (data.locked) { %>
-            <div class="test locked">
+            <div class="background locked">
                 <div class="overlay">
                     <h2>
                         <%= data.Subject %> gaat open op :
@@ -9,7 +9,7 @@
                     </h2>
                 </div>
                 <% } else {%>
-                    <div class="test">
+                    <div class="background">
                         <a href="/enquete/<%= data.id %>">
                             <% } %>
                                 <div class="card">
@@ -22,11 +22,10 @@
                                     <%= data.Subject %>
                                 </h2>
                                 <div class="text_container">
-
                                 </div>
                                 <button class="btn card_btn">
-                Vul Enquete in
-              </button>
+             Vul Enquete in
+             </button>
                         </a>
                     </div>
                     <% }) %>

@@ -19,6 +19,14 @@ Also not forget to mention that my second idea has slugs for each of the card, s
 Also I have made a begin state here where a student can put in their studentnumber that is being saved for further uses to process their data.
 
 
+## The app
+
+![image](https://raw.githubusercontent.com/RowinRuizendaal/browser-technologies-2021/master/docs/img/app-1.png)
+
+![image](https://raw.githubusercontent.com/RowinRuizendaal/browser-technologies-2021/master/docs/img/app-2.png)
+
+![image](https://raw.githubusercontent.com/RowinRuizendaal/browser-technologies-2021/master/docs/img/app-3.png)
+
 ## Localstorage
 
 Localstorage is being used to save the user's data, if they come back everything will be the same as first.
