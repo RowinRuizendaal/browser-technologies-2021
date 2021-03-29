@@ -97,6 +97,7 @@ input[type="text"] {
 
 .formhome input[type='submit'],
 .next,
+.previous,
 .no-js {
     background-color: var(--blauw);
     background-color: rgb(38, 114, 236);
@@ -112,12 +113,25 @@ input[type="text"] {
     margin-top: 2rem;
 }
 
+.previous {
+    margin-right: 10px;
+}
+
 .formhome input[type="submit"]:disabled {
     opacity: 0.2;
 }
 
 .formhome input[type='submit']:not(:disabled):hover {
     background: rgb(212, 227, 251);
+}
+
+#docenten {
+    color: black;
+}
+
+#docenten>option {
+    font-size: 15px;
+    font-weight: bold;
 }
 
 
@@ -367,6 +381,10 @@ nav p {
     display: block;
 }
 
+.buttons {
+    display: block;
+}
+
 .enquete-form {
     display: flex;
     justify-content: center;
@@ -393,7 +411,8 @@ nav p {
     transform: translateX(24px);
 }
 
-.no-js {
+.no-js,
+.previous {
     display: none;
 }
 
@@ -477,6 +496,9 @@ nav p {
         justify-content: center;
         align-items: center;
         flex-direction: column;
+    }
+    .buttons {
+        display: flex;
     }
 }
 

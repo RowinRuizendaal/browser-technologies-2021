@@ -63,9 +63,33 @@ Android (Samsung internet)
 
 ## Feature detection
 
+
+Localstorage
+
+```js
+const storageAvailable = (type) => {
+    try {
+        const storage = window[type],
+            x = '__storage_test__';
+        storage.setItem(x, x);
+        storage.removeItem(x);
+        return true;
+    } catch (e) {
+        return false;
+    }
+}
+```
+
+```js
+    if (storageAvailable('localStorage')) {
+      // Do something
+    }
+
+```
+
 querySelectorAll
 
-Omdat er geen goede crossbrowser alternatief is voor querySelector, is mijn belangrijkste check of querySelector beschikbaar is in de browser. Vanaf IE9 is querySelector volledig ondersteund, waardoor ik alle functies die ook vanaf IE9 ondersteund zijn kan gebruiken in mijn code.
+Since there is no good crossbrowser alternative to querySelector, my main check is whether querySelector is available in the browser. QuerySelector is fully supported from IE9, allowing me to use all functions that are also supported from IE9 in my code.
 
 [Queryselector](https://caniuse.com/?search=queryselector)
 
@@ -77,7 +101,7 @@ if (typeof document.querySelectorAll === 'function') {
 
 array.includes
 
-.includes() wordt in IE en in oudere browsers niet ondersteund. Een alternatief hiervoor is .indexOf(). Hiermee kan ik alsnog zien welke namen niet overeenkomen met de zoekopdracht en deze verbergen.
+.includes () is not supported in IE and older browsers. An alternative to this is .indexOf (). With this I can still see which names do not match the search and hide them.
 
 [includes](https://caniuse.com/?search=includes)
 
@@ -91,7 +115,7 @@ if (typeof [].includes === 'function') {
 
 forEach
 
-Vanaf IE10 wordt forEach() volledig ondersteund. In IE9 moeten forEach() dus worden vervangen door for loops.
+ForEach () is fully supported from IE10. So in IE9 forEach () should be replaced with for loops.
 
 [forEach](https://caniuse.com/?search=foreach)
 
@@ -106,7 +130,8 @@ if (typeof NodeList.prototype.forEach === 'function') {
 
 addEventListener
 
-De 'terug naar boven' knop staat los van de zoekfuncties van de app. Daarom kan ik deze beschikbaar maken in browsers ouder dan IE9. Ik vervang addEventListener door attachEvent in deze browsers. Omdat attachEvent ondersteund wordt tot en met IE8, moet ik deze functie ook detecteren.
+
+The 'back to top' button is separate from the search functions of the app. Hence, I can make it available in browsers older than IE9. I am replacing addEventListener with attachEvent in these browsers. Since attachEvent is supported up to IE8, I have to detect this function as well.
 
 [EventListner](https://caniuse.com/?search=addeventlistener)
 
@@ -118,9 +143,9 @@ if (typeof document.addEventListener === 'function') {
 }
 ```
 
-## Aanpassingen
+## Modifications
 
-Arrow functions verplaats voor normale functions
+Arrow functions move for normal functions
 
 
 ## HTML elements being used:

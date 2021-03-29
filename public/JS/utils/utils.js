@@ -28,23 +28,31 @@ const storageAvailable = (type) => {
 }
 
 export const setItem = (keyName, keyValue, objectName) => {
-    let a = []
+    if (storageAvailable('localStorage')) {
+        let a = []
 
-    a = JSON.parse(localStorage.getItem(keyName)) || [];
+        a = JSON.parse(localStorage.getItem(keyName)) || [];
 
-    if (objectName) {
-    for (let i = 0; i < a.length; i++) {
-        for (var key in a[i]) {
-            if (objectName === key) {
-                return
+        if (objectName) {
+            for (let i = 0; i < a.length; i++) {
+                for (let key in a[i]) {
+                    if (objectName === key) {
+                        for (let [key, value] of Object.entries(a[i])) {
+                            if (keyValue === value) {
+                                return
+                            }
+                        }
+                    }
+                }
             }
+            a.push({
+                [objectName]: keyValue
+            })
+            return localStorage.setItem(keyName, JSON.stringify(a))
         }
+
+        return localStorage.setItem(keyName, keyValue)
     }
-    a.push({
-        [objectName]: keyValue
-    })
-}
-    return localStorage.setItem(keyName, JSON.stringify(a))
 }
 
 

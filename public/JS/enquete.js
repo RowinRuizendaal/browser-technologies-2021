@@ -5,16 +5,20 @@ import {
     queryAll
 } from './utils/utils.js'
 
-const button = query('.submit')
+
 const hash = window.location.href
 const hashAwnser = `${hash}-awnsers`
+
+const nextButton = query('.submit')
+const previous = query('.previous')
+const feedforward = query('.enquete-container h3')
 
 let stap = 1;
 
 const formFields = [
     'firstName',
     'lastName',
-    // '#docenten',
+    'docenten',
     'date',
     'difficult',
     'clarity',
@@ -23,9 +27,6 @@ const formFields = [
 
 
 function form(stap) {
-
-
-    // Set localstorage for items that have a value
     for (let i = 0; i < formFields.length; i++) {
         if (document.getElementById(formFields[i]).value) {
             const value = document.getElementById(formFields[i]).value
@@ -33,24 +34,38 @@ function form(stap) {
         }
     }
 
+    if (stap > 5) {
+        stap = 5
+    }
+
+    feedforward.innerHTML = `${stap}/${formFields.length -2}`
+
     if (stap == 1) {
         queryAll('.stap1', 'flex')
+        queryAll('.stap2', 'none')
+        queryAll('.previous', 'none')
 
     }
 
     if (stap === 2) {
         queryAll('.stap1', 'none')
         queryAll('.stap2', 'flex')
+        queryAll('.stap3', 'none')
+        queryAll('.previous', 'block')
     }
 
     if (stap == 3) {
         queryAll('.stap2', 'none')
         queryAll('.stap3', 'flex')
+        queryAll('.stap4', 'none')
+        queryAll('.previous', 'block')
     }
 
     if (stap == 4) {
         queryAll('.stap3', 'none')
         queryAll('.stap4', 'flex')
+        queryAll('.stap5', 'none')
+        queryAll('.previous', 'block')
     }
     if (stap == 5) {
         queryAll('.submit', 'none')
@@ -59,17 +74,29 @@ function form(stap) {
         queryAll('.stap2', 'flex')
         queryAll('.stap3', 'flex')
         queryAll('.stap4', 'flex')
+        queryAll('.previous', 'none')
     }
 }
 
 
 
 
-button.addEventListener('click', function(e) {
+nextButton.addEventListener('click', function(e) {
     e.preventDefault()
     stap++
     form(stap)
-    localStorage.setItem(hash, stap)
+    setItem(hash, stap)
+})
+
+previous.addEventListener('click', function(e) {
+    e.preventDefault()
+    if (stap <= 1) {
+        form(1)
+        return setItem(hash, stap)
+    }
+    stap--
+    form(stap)
+    setItem(hash, stap)
 })
 
 
@@ -82,19 +109,15 @@ window.onload = function() {
             const length = storage.length
 
             for (let i = 0; i < length; i++) {
-                for (let key in storage[i]) {
+                for (let [key, value] of Object.entries(storage[i])) {
                     let declaration = document.getElementById(key)
-                    for (let [key, value] of Object.entries(storage[i])) {
-                        declaration.value = value
-                        console.log(value);
-                      }
+                    declaration.value = value
                 }
             }
+            return form(JSON.parse(checkStorage(hash)))
         }
-
-        form(checkStorage(hash))
+        return form(checkStorage(hash))
     }
 
-
-    form(stap)
+    return form(stap)
 }

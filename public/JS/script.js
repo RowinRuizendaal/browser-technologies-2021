@@ -1,4 +1,4 @@
-import {checkStorage, setItem} from './utils/utils.js'
+import { checkStorage, setItem } from './utils/utils.js'
 
 // declarations
 const form = document.querySelector('form')
@@ -16,7 +16,7 @@ window.onload = () => {
 
     if (StudentNumber) {
         input.value = StudentNumber
-        button.disabled = false
+        checkState()
     }
 }
 
