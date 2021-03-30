@@ -65,27 +65,6 @@ Keeping track of where the person left off (this will take you back to the form 
 
 
 
-## Desktop Browsers
-
-Firefox
-Edge
-
-## Firefox
-
-Firefox
-
-## Mobile
-
-### IOS (safari)
-
-![image](https://github.com/RowinRuizendaal/browser-technologies-2021/blob/master/docs/onderzoek/1.png?raw=true)
-
-Button has default styling
-
-> -webkit-appearance: none;
-
-![image](https://github.com/RowinRuizendaal/browser-technologies-2021/blob/master/docs/onderzoek/2.png?raw=true)
-
 
 ### CSS variables
 
