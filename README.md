@@ -157,9 +157,6 @@ Keeping track of where the person left off (this will take you back to the form 
 ```
 
 
-### Android (Samsung internet)
-
-
 ## Feature detection
 
 
