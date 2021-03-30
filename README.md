@@ -27,6 +27,10 @@ Also I have made a begin state here where a student can put in their studentnumb
 
 ![image](https://raw.githubusercontent.com/RowinRuizendaal/browser-technologies-2021/master/docs/img/app-3.png)
 
+## Testing with diffrent devices & browsers
+
+The documentation about testing can be found [here](https://github.com/RowinRuizendaal/browser-technologies-2021/wiki/testing)
+
 ## Localstorage
 
 Localstorage is being used to save the user's data, if they come back everything will be the same as first.
