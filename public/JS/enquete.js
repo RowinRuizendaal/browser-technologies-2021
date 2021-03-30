@@ -88,6 +88,7 @@ nextButton.addEventListener('click', function(e) {
     setItem(hash, stap)
 })
 
+if (previous) {
 previous.addEventListener('click', function(e) {
     e.preventDefault()
     if (stap <= 1) {
@@ -98,6 +99,7 @@ previous.addEventListener('click', function(e) {
     form(stap)
     setItem(hash, stap)
 })
+}
 
 
 window.onload = function() {
