@@ -280,6 +280,11 @@ Since most browsers support for loops instead of for each, I will be using for l
 EventListeners are not supported in IE 6-8, this version of IE has been released since Aug 27, 2001 this is the only browser that does not support the Event.addEventListener() method.
 
 
+### Functions
+
+Arrow functions are not supported in some browsers, so I decided I will convert them into normal functions so that all browsers support the methods
+
+
 
 ## Modifications
 
