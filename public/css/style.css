@@ -442,19 +442,19 @@ nav p {
 /* Form stappen */
 
 .stap1 {
-    display: none;
+    display: flex;
 }
 
 .stap2 {
-    display: none
+    display: flex
 }
 
 .stap3 {
-    display: none
+    display: flex
 }
 
 .stap4 {
-    display: none;
+    display: flex;
 }
 
 @supports (display: grid) {

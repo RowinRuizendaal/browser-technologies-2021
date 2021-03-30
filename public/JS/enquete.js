@@ -27,6 +27,7 @@ const formFields = [
 
 
 function form(stap) {
+
     for (let i = 0; i < formFields.length; i++) {
         if (document.getElementById(formFields[i]).value) {
             const value = document.getElementById(formFields[i]).value
@@ -89,20 +90,27 @@ nextButton.addEventListener('click', function(e) {
 })
 
 if (previous) {
-previous.addEventListener('click', function(e) {
-    e.preventDefault()
-    if (stap <= 1) {
-        form(1)
-        return setItem(hash, stap)
-    }
-    stap--
-    form(stap)
-    setItem(hash, stap)
-})
+    previous.addEventListener('click', function(e) {
+        e.preventDefault()
+        if (stap <= 1) {
+            form(1)
+            return setItem(hash, stap)
+        }
+        stap--
+        form(stap)
+        setItem(hash, stap)
+    })
 }
 
 
+
 window.onload = function() {
+
+    for (let i = 0; i <= 4; i++) {
+        document.querySelectorAll(`.stap${i}`).forEach((item) => {
+            item.style.display = 'none'
+        })
+    }
     if (checkStorage(hash)) {
         const values = checkStorage(hashAwnser)
 

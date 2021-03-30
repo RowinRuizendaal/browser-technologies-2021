@@ -6,7 +6,7 @@
         </div>
         <div class="form-group stap1">
             <label for="lastName">achternaam</label>
-            <input type="text" name="lastName" required value="<%= data.lastName %>">
+            <input type="text" name="lastName" id="lastName" required value="<%= data.lastName %>">
         </div>
         <div class="form-group stap2">
             <label for="first-name">Docenten</label>
@@ -47,15 +47,15 @@
         </div>
         <div class="form-group stap3">
             <label for="first-name">Hoe moeilijk was het?</label>
-            <input type="text" id="lname" name="difficult" required value="<%= data.difficult %>">
+            <input type="text" id="difficult" name="difficult" required value="<%= data.difficult %>">
         </div>
         <div class="form-group stap4">
             <label for="first-name">Hoe duidelijk is het uitgelegd?</label>
-            <input type="text" id="lname" name="clarity" required value="<%= data.clarity %>">
+            <input type="text" id="clarity" name="clarity" required value="<%= data.clarity %>">
         </div>
         <div class="form-group stap4">
             <label for="first-name">Hoe goed snap je het</label>
-            <input type="text" id="lname" name="understanding" required value="<%= data.understanding %>">
+            <input type="text" id="understanding" name="understanding" required value="<%= data.understanding %>">
         </div>
     </div>
     <button class="submit next" type="submit" tabindex="0">Volgende stap</button>
