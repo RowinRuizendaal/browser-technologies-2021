@@ -27,6 +27,10 @@ Also I have made a begin state here where a student can put in their studentnumb
 
 ![image](https://raw.githubusercontent.com/RowinRuizendaal/browser-technologies-2021/master/docs/img/app-3.png)
 
+## Testing with diffrent devices & browsers
+
+The documentation about testing can be found [here](https://github.com/RowinRuizendaal/browser-technologies-2021/wiki/testing)
+
 ## Localstorage
 
 Localstorage is being used to save the user's data, if they come back everything will be the same as first.
@@ -274,6 +278,11 @@ Since most browsers support for loops instead of for each, I will be using for l
 ### EventListener
 
 EventListeners are not supported in IE 6-8, this version of IE has been released since Aug 27, 2001 this is the only browser that does not support the Event.addEventListener() method.
+
+
+### Functions
+
+Arrow functions are not supported in some browsers, so I decided I will convert them into normal functions so that all browsers support the methods
 
 
 
